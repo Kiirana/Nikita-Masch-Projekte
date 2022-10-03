@@ -1,0 +1,195 @@
+
+
+num = 0
+i = 2
+board = {1: ' ', 2: ' ', 3: ' ',
+         4: ' ', 5: ' ', 6: ' ',
+         7: ' ', 8: ' ', 9: ' '}
+print('Tic Tac Toe Layout')
+
+def printf(board):
+   print(' ',board[1] , board[2] ,  board[3] ,' ' , sep= '|' )
+   print('','-------')
+   print(' ',board[4] , board[5] , board[6] , ' ' , sep= '|')
+   print('','-------')
+   print(' ',board[7] , board[8] , board[9] , ' ', sep= '|',)
+   print("\n")
+def printexample(board):
+    print(' ',1 , 2 , 3 ,' ' , sep= '|' )
+    print('','-------')
+    print(' ',4,   5 , 6 ,' ', sep= '|')
+    print('','-------')
+    print(' ',7 , 8 , 9 , ' ', sep= '|')
+    print("\n")
+
+
+printexample(board)
+
+
+def check(position,board):
+    if board[position] == ' ':
+
+        return True
+
+    else:
+
+        return False
+
+
+
+
+def outcomes():
+    count = 0
+    while count != 1:
+
+        if board[1]  == 'X' and board[4] == 'X' and board[7]  == 'x':
+            count = count + 1
+            print("X WON !")
+            return True
+
+        if board[2]  == 'X' and board[5]  == 'X' and board[8]  == 'X':
+            count = count + 1
+            print("X WON ! ")
+            return True
+
+
+        if board[3]  == 'X' and board[6]  == 'X' and board[9]  == 'X':
+            count = count + 1
+            print("X WON !")
+            return True
+
+        if board[1]  == 'X' and board[2]  == 'X' and board[3]  == 'X':
+            count = count + 1
+            print("X WON !")
+            return True
+
+        if board[4]  == 'X' and board[5]  == 'X' and board[6]  == 'X':
+            count = count + 1
+            print("X WON !")
+            return True
+
+        if board[7]  == 'X' and board[8]  == 'X' and board[9]  == 'X':
+            count = count + 1
+            print("X WON !")
+            return True
+
+        if board[1]  == 'X' and board[5]  == 'X' and board[9]  == 'X':
+            count = count + 1
+            print("X WON !")
+            return True
+
+        if board[7] == 'X' and board[5] == 'X' and board[3] == 'X':
+            count = count + 1
+            print("X WON !")
+            return True
+
+        if board[1] == 'O' and board[4] == 'O' and board[7] == 'O':
+            count = count + 1
+            print("O WON !")
+            return True
+
+        if board[2] == 'O' and board[5] == 'O' and board[8] == 'O':
+            count = count + 1
+            print("O WON !")
+            return True
+
+        if board[3] == 'O' and board[6] == 'O' and board[9] == 'O':
+            count = count + 1
+            print("O WON !")
+            return True
+
+        if board[1] == 'O' and board[2] == 'O' and board[3] == 'O':
+            count = count + 1
+            print("O WON !")
+            return True
+
+        if board[4] == 'O' and board[5] == 'O' and board[6] == 'O':
+            count = count + 1
+            print("O WON !")
+            return True
+
+        if board[7] == 'O' and board[8] == 'O' and board[9] == 'O':
+            count = count + 1
+            print("O WON !")
+            return True
+
+        if board[1] == 'O' and board[5] == 'O' and board[9] == 'O':
+            count = count + 1
+            print("O WON !")
+            return True
+
+        if board[7] == 'O' and board[5] == 'O' and board[3] == 'O':
+            count = count + 1
+            print("O WON !")
+            return True
+
+        if (board[1] == 'O' or board[1] == 'X') and (board[2] == 'O' or board[2] == 'X') and (board[3] == 'O' or board[3] == 'X') and (board[4] == 'O' or board[4] == 'X') and (board[5] == 'O' or board[5] == 'X') and (board[6] == 'O' or board[6] == 'X') and (board[7] == 'O' or board[7] == 'X') and (board[8] == 'O' or board[8] == 'X') and (board[9] == 'O' or board[9] == 'X'):
+            print("It is a DRAW !")
+
+            return True
+        else:
+            return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def setero(num):
+    i = 2
+    print("player X turn")
+
+    while outcomes() == False:
+
+
+        i = i + 1
+        printf(board)
+        printexample(board)
+        if check(num,board) == True :
+            if (i % 2 == 0):
+                print("player O turn")
+                board[num] = 'X'
+                if(outcomes() == True):
+                   exit(1)
+
+
+
+
+
+
+            if (  i % 2 != 0 ):
+                print("player X turn")
+                board[num] = 'O'
+                if (outcomes() == True):
+                    exit(1)
+
+
+
+
+        else:
+            print(" enter new number square is not available")
+            lum = int(input ())
+            num = lum
+
+        printf(board)
+
+        lum = int(input('enter number '))
+        num = lum
+
+
+lum =  int(input('enter number ' ))
+
+setero(lum)
